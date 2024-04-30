@@ -12,7 +12,7 @@ export default async function Page() {
     const latestInvoices = await fetchLatestInvoices();
     const { numberOfCustomers, numberOfInvoices, totalPaidInvoices, totalPendingInvoices } = await fetchCardData();
     console.log(revenue,"RevenueChart")
-    // 아래와 같이 하면 함수를 병렬로 실행하고 모든 비동기 작업이 완료될 때까지 기다린 후 데이터를 사용함, 성능 향상
+    // 아래와 같이 하면 함수를 병렬로 실행하고 모든 비동기 작업이 완료될 때까지 기다린 후 데이터를 사용함, 성능 향상 대신 가독성 측면에서 떨어질 수 잇음
     // export async function fetchCardData() {
     //   try {
     //     const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
